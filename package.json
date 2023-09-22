@@ -10,14 +10,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.5.0",
     "classnames": "^2.3.2",
     "next": "12.2.4-canary.9",
+    "next-connect": "^0.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "@types/lodash": "^4.14.198",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",

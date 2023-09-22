@@ -2,8 +2,9 @@ import '../styles/globals.css'
 import type { AppContext, AppProps } from 'next/app'
 import { Layout, ILayoutProps } from "@/components/layout";
 import App from 'next/app';
-import code from "@/public/code.png";
 import Head from 'next/head';
+import axios from 'axios';
+import { LOCALDOMAIN } from '@/utils';
 
 function MyApp(data: AppProps & ILayoutProps) {
 
@@ -30,60 +31,13 @@ function MyApp(data: AppProps & ILayoutProps) {
 MyApp.getInitialProps = async (context: AppContext) => {
   // 用内置的 App 对象来获取对应组件本身的 pageProps
   const pageProps = await App.getInitialProps(context);
+  // 根据Nextjs的路由，访问到layout的页面API封装请求
+  const { data = {} } = await axios.get(`${LOCALDOMAIN}/api/layout`);
 
   return {
     ...pageProps,
-    navbarData: {},
-    footerData: {
-      title: "Demo",
-      linkList: [
-        {
-          title: "技术栈",
-          list: [
-            {
-              label: "react",
-            },
-            {
-              label: "typescript",
-            },
-            {
-              label: "ssr",
-            },
-            {
-              label: "nodejs",
-            },
-          ],
-        },
-        {
-          title: "了解更多",
-          list: [
-            {
-              label: "掘金",
-              link: "https://juejin.cn/user/2714061017452557",
-            },
-            {
-              label: "知乎",
-              link: "https://www.zhihu.com/people/zmAboutFront",
-            },
-            {
-              label: "csdn",
-            },
-          ],
-        },
-        {
-          title: "联系我",
-          list: [{ label: "微信" }, { label: "QQ" }],
-        },
-      ],
-      qrCode: {
-        image: code,
-        text: "祯民讲前端微信公众号",
-      },
-      copyRight: "Copyright © 2022 xxx. 保留所有权利",
-      siteNumber: "粤ICP备XXXXXXXX号-X",
-      publicNumber: "粤公网安备 xxxxxxxxxxxxxx号",
-    },
+    ...data,
   };
 };
 
-export default MyApp
+export default MyApp;
