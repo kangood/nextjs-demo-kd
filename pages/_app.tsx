@@ -1,10 +1,12 @@
-import '../styles/globals.css'
 import type { AppContext, AppProps } from 'next/app'
 import { Layout, ILayoutProps } from "@/components/layout";
 import App from 'next/app';
 import Head from 'next/head';
 import axios from 'axios';
 import { LOCALDOMAIN } from '@/utils';
+import { ThemeContextProvider } from "@/stores/theme";
+
+import "./global.scss";
 
 function MyApp(data: AppProps & ILayoutProps) {
 
@@ -20,9 +22,12 @@ function MyApp(data: AppProps & ILayoutProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout navbarData={navbarData} footerData={footerData}>
-        <Component {...pageProps} />
-      </Layout>
+      {/* 全局页面注入主题 context */}
+      <ThemeContextProvider>
+        <Layout navbarData={navbarData} footerData={footerData}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeContextProvider>
     </div>
   );
 }
