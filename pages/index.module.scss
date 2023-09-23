@@ -109,3 +109,186 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+
+// ====================动画样式====================
+.withAnimation {
+  .title {
+    // 使用 CSS Animation 实现复杂帧动画的绘制
+    animation: fadeInDown1 1s;
+  }
+
+  .description {
+    animation: fadeInDown2 1s;
+  }
+
+  .card:nth-of-type(1) {
+    animation: fadeInDown3 1s;
+  }
+
+  .card:nth-of-type(2) {
+    animation: fadeInDown4 1s;
+  }
+
+  .card:nth-of-type(3) {
+    animation: fadeInDown5 1s;
+  }
+
+  .card:nth-of-type(4) {
+    animation: fadeInDown6 1s;
+  }
+
+  .card:nth-of-type(5) {
+    animation: fadeInDown7 1s;
+  }
+
+  .card:nth-of-type(6) {
+    animation: fadeInDown8 1s;
+  }
+}
+
+// @keyframes 指向动画的逐帧状态
+@keyframes fadeInDown1 {
+  // 0% 和 11 % 都是一样的内容，这时区域处于 y 轴 40px 位置
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  11% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+  // 末尾状态是无区域状态和 1 透明度，动画的效果会使得动画从整体时间的 11% 开始执行，到 100 % 完成最终的变化
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+// 每个动画延迟一个帧频率执行，8 个区域，共 9 帧，所以 1 帧的占比为 11% 的总动画时长
+@keyframes fadeInDown2 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  22% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown3 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  33% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown4 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  44% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown5 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown6 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown7 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  77% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown8 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  88% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
