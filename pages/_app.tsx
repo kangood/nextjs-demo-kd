@@ -5,9 +5,14 @@ import Head from 'next/head';
 import axios from 'axios';
 import { LOCALDOMAIN, getIsMobile } from '@/utils';
 import { ThemeContextProvider } from "@/stores/theme";
+import { UserAgentProvider } from '@/stores/userAgent';
 
 import "./global.scss";
-import { UserAgentProvider } from '@/stores/userAgent';
+
+export interface IComponentProps {
+  isMobile?: boolean;
+  isSupportWebp?: boolean;
+}
 
 function MyApp(data: AppProps & ILayoutProps & { isMobile: boolean }) {
 

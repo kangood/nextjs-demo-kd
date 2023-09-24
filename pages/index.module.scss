@@ -1,294 +1,320 @@
+@import "./media.scss";
+
+@mixin initStatus {
+  transform: translate3d(0, 2.5rem, 0);
+  opacity: 0;
+}
+
+@mixin finalStatus {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+}
+
 .container {
   padding: 0 2rem;
   color: var(--primary-color);
-}
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: .0625rem solid var(--primary-color);
-  justify-content: center;
-  align-items: center;
-}
+    .title a:hover,
+    .title a:focus,
+    .title a:active {
+      text-decoration: underline;
+    }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
+    .title {
+      margin: 0;
+      line-height: 1.15;
+      font-size: 4rem;
+    }
 
-.title a {
-  color: var(--link-color);
-  text-decoration: none;
-}
+    .title,
+    .description {
+      text-align: center;
+    }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
+    .description {
+      margin: 4rem 0;
+      line-height: 1.5;
+      font-size: 1.5rem;
+    }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
+    .grid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      max-width: 62.5rem;
+      transition: 2s;
+      min-height: 36.25rem;
+      .card {
+        margin: 1rem;
+        padding: 1.5rem;
+        text-align: left;
+        color: inherit;
+        text-decoration: none;
+        border: 0.0625rem solid var(--footer-background-color);
+        border-radius: 0.625rem;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        max-width: 18.75rem;
+        cursor: pointer;
+        width: 18.75rem;
+        height: 13.875rem;
+      }
 
-.title,
-.description {
-  text-align: center;
-}
+      .card:hover,
+      .card:focus,
+      .card:active {
+        color: var(--link-color);
+        border-color: var(--link-color);
+      }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
+      .card h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+      }
 
-.code {
-  background: var(--primary-color);
-  border-radius: .3125rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+      .card p {
+        margin: 0;
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+    }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 50rem;
-}
+    .paginationArea {
+      width: 43.125rem;
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 0;
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: .0625rem solid var(--footer-background-color);
-  border-radius: .625rem;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 18.75rem;
-  cursor: pointer;
-}
+      :global {
+        .semi-page-item {
+          color: var(--primary-color);
+          opacity: 0.7;
+        }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: var(--link-color);
-  border-color: var(--link-color);
-}
+        .semi-page-item:hover {
+          background-color: var(--semi-page-hover-background-color);
+        }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
+        .semi-page-item-active {
+          color: var(--semi-page-active-color);
+          background-color: var(--semi-page-active-background-color);
+        }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
+        .semi-page-item-active:hover {
+          color: var(--semi-page-active-color);
+          background-color: var(--semi-page-active-background-color);
+        }
+      }
+    }
+  }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-// ====================动画样式====================
-.withAnimation {
-  .title {
+  // ====================动画样式====================
+  .withAnimation {
+    .title {
     // 使用 CSS Animation 实现复杂帧动画的绘制
-    animation: fadeInDown1 1s;
-  }
+      animation: fadeInDown1 1s;
+    }
 
-  .description {
-    animation: fadeInDown2 1s;
-  }
+    .description {
+      animation: fadeInDown2 1s;
+    }
 
-  .card:nth-of-type(1) {
-    animation: fadeInDown3 1s;
-  }
+    .card:nth-of-type(1) {
+      animation: fadeInDown3 1s;
+    }
 
-  .card:nth-of-type(2) {
-    animation: fadeInDown4 1s;
-  }
+    .card:nth-of-type(2) {
+      animation: fadeInDown4 1s;
+    }
 
-  .card:nth-of-type(3) {
-    animation: fadeInDown5 1s;
-  }
+    .card:nth-of-type(3) {
+      animation: fadeInDown5 1s;
+    }
 
-  .card:nth-of-type(4) {
-    animation: fadeInDown6 1s;
-  }
+    .card:nth-of-type(4) {
+      animation: fadeInDown6 1s;
+    }
 
-  .card:nth-of-type(5) {
-    animation: fadeInDown7 1s;
-  }
+    .card:nth-of-type(5) {
+      animation: fadeInDown7 1s;
+    }
 
-  .card:nth-of-type(6) {
-    animation: fadeInDown8 1s;
+    .card:nth-of-type(6) {
+      animation: fadeInDown8 1s;
+    }
   }
-}
 
 // @keyframes 指向动画的逐帧状态
-@keyframes fadeInDown1 {
+  @keyframes fadeInDown1 {
   // 0% 和 11 % 都是一样的内容，这时区域处于 y 轴 2.5rem 位置
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    0% {
+      @include initStatus;
+    }
 
-  11% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    11% {
+      @include initStatus;
+    }
   // 末尾状态是无区域状态和 1 透明度，动画的效果会使得动画从整体时间的 11% 开始执行，到 100 % 完成最终的变化
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
+    100% {
+      @include finalStatus;
+    }
   }
-}
 
 // 每个动画延迟一个帧频率执行，8 个区域，共 9 帧，所以 1 帧的占比为 11% 的总动画时长
-@keyframes fadeInDown2 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+  @keyframes fadeInDown2 {
+    0% {
+      @include initStatus;
+    }
+
+    22% {
+      @include initStatus;
+    }
+
+    100% {
+      @include finalStatus;
+    }
   }
 
-  22% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+  @keyframes fadeInDown3 {
+    0% {
+      @include initStatus;
+    }
+
+    33% {
+      @include initStatus;
+    }
+
+    100% {
+      @include finalStatus;
+    }
   }
 
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
+  @keyframes fadeInDown4 {
+    0% {
+      @include initStatus;
+    }
 
-@keyframes fadeInDown3 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    44% {
+      @include initStatus;
+    }
 
-  33% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+    100% {
+      @include finalStatus;
+    }
   }
 
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
+  @keyframes fadeInDown5 {
+    0% {
+      @include initStatus;
+    }
 
-@keyframes fadeInDown4 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    55% {
+      @include initStatus;
+    }
 
-  44% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+    100% {
+      @include finalStatus;
+    }
   }
 
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
+  @keyframes fadeInDown6 {
+    0% {
+      @include initStatus;
+    }
 
-@keyframes fadeInDown5 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    66% {
+      @include initStatus;
+    }
 
-  55% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+    100% {
+      @include finalStatus;
+    }
   }
 
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
+  @keyframes fadeInDown7 {
+    0% {
+      @include initStatus;
+    }
 
-@keyframes fadeInDown6 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    77% {
+      @include initStatus;
+    }
 
-  66% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+    100% {
+      @include finalStatus;
+    }
   }
 
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
-}
+  @keyframes fadeInDown8 {
+    0% {
+      @include initStatus;
+    }
 
-@keyframes fadeInDown7 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
+    88% {
+      @include initStatus;
+    }
 
-  77% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
+    100% {
+      @include finalStatus;
+    }
   }
 }
 
-@keyframes fadeInDown8 {
-  0% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
+// ====================media适配====================
+@include media-ipad {
+  .container {
+    .main {
+      .grid {
+        width: 95%;
+        margin: auto;
+        justify-content: center;
+      }
+    }
   }
+}
 
-  88% {
-    transform: translate3d(0, 2.5rem, 0);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
+@include media-mobile {
+  .container {
+    .main {
+      .title {
+        font-size: 1.75rem;
+        line-height: 2.4375rem;
+      }
+      .description {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+      }
+      .grid {
+        width: 95%;
+        margin: auto;
+        justify-content: center;
+        .card {
+          height: 10rem;
+          h2 {
+            font-size: 1.125rem;
+            line-height: 1.5625rem;
+          }
+          p {
+            font-size: 0.75rem;
+            line-height: 1.625rem;
+          }
+        }
+      }
+    }
   }
 }

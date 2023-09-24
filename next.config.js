@@ -1,6 +1,9 @@
 const path = require("path");
 
-module.exports = {
+// 用 semi-next 包裹一层配置文件，进行默认导入样式的去除
+const semi = require("@douyinfe/semi-next").default({});
+
+module.exports = semi({
     reactStrictMode: true,
     swcMinify: true,
     webpack: (config) => {
@@ -11,6 +14,6 @@ module.exports = {
         return config;
     },
     images: {
-        domains: ["127.0.0.1"],
+        domains: ["localhost", "127.0.0.1"],
     },
-};
+});
