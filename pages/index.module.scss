@@ -17,7 +17,7 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid var(--primary-color);
+  border-top: .0625rem solid var(--primary-color);
   justify-content: center;
   align-items: center;
 }
@@ -59,7 +59,7 @@
 
 .code {
   background: var(--primary-color);
-  border-radius: 5px;
+  border-radius: .3125rem;
   padding: 0.75rem;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
@@ -71,7 +71,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 50rem;
 }
 
 .card {
@@ -80,10 +80,10 @@
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid var(--footer-background-color);
-  border-radius: 10px;
+  border: .0625rem solid var(--footer-background-color);
+  border-radius: .625rem;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 18.75rem;
   cursor: pointer;
 }
 
@@ -148,14 +148,14 @@
 
 // @keyframes 指向动画的逐帧状态
 @keyframes fadeInDown1 {
-  // 0% 和 11 % 都是一样的内容，这时区域处于 y 轴 40px 位置
+  // 0% 和 11 % 都是一样的内容，这时区域处于 y 轴 2.5rem 位置
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   11% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
   // 末尾状态是无区域状态和 1 透明度，动画的效果会使得动画从整体时间的 11% 开始执行，到 100 % 完成最终的变化
@@ -169,12 +169,12 @@
 // 每个动画延迟一个帧频率执行，8 个区域，共 9 帧，所以 1 帧的占比为 11% 的总动画时长
 @keyframes fadeInDown2 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   22% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
@@ -187,12 +187,12 @@
 
 @keyframes fadeInDown3 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   33% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
@@ -205,12 +205,12 @@
 
 @keyframes fadeInDown4 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   44% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
@@ -223,12 +223,12 @@
 
 @keyframes fadeInDown5 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   55% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
@@ -241,12 +241,12 @@
 
 @keyframes fadeInDown6 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   66% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
@@ -259,12 +259,12 @@
 
 @keyframes fadeInDown7 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   77% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
@@ -277,12 +277,12 @@
 
 @keyframes fadeInDown8 {
   0% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
   88% {
-    transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 2.5rem, 0);
     opacity: 0;
   }
 
