@@ -9,6 +9,9 @@ html[data-theme="dark"] {
     --link-color: #34a8eb; // 链接 hover 上去的颜色
     --navbar-icon: url("../public/logo_dark.png");
     --theme-icon: url("../public/theme_dark.png");
+    --popup-close-icon: url("../public/close.png");
+    --popup-close-hover-background-color: #353535;
+    --popup-content-background-color: #1f1f1f;
 }
 
 html[data-theme="light"] {
@@ -20,6 +23,9 @@ html[data-theme="light"] {
     --link-color: #0070f3;
     --navbar-icon: url("../public/logo_light.png");
     --theme-icon: url("../public/theme_light.png");
+    --popup-close-icon: url("../public/close_light.png");
+    --popup-close-hover-background-color: #f5f5f5;
+    --popup-content-background-color: #f4f5f5;
 }
 
 html,
@@ -38,3 +44,16 @@ a {
 * {
     box-sizing: border-box;
 }
+
+// 移动端遮罩层
+.forbidScroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+// pc端遮罩层
+.pcForbidScroll {
+    width: calc(100% - 1rem); // 滚动栏假区域
+    height: 100vh;
+    overflow: hidden;
+  }
