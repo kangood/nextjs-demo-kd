@@ -21,14 +21,16 @@ function MyApp(data: AppProps & ILayoutProps & { isMobile: boolean; isSupportWeb
   return (
     <div>
       <Head>
-        <title>{`A Demo for 《深入浅出SSR官网开发指南》(${
-            isMobile ? "移动端" : "pc端"
-          })`}
-        </title>
-        <meta
-          name="description"
-          content="A Demo for 《深入浅出SSR官网开发指南》"
-        />
+        {/* SEO优化之「TDK」 */}
+        <title>{`A Demo for Kangod's Next-SSR(${isMobile ? "移动端" : "pc端"})`}</title>
+        <meta name="description" content={`A Demo for Kangod's Next-SSR(${isMobile ? '移动端' : 'pc端'})`}/>
+        <meta name="keywords" content="Kangod, Next, SSR"/>
+        {/* index开启搜索引擎抓取，follow对应追踪网页的链接 */}
+        <meta name="robots" content="index, follow" />
+        {/* Applicable-device: 告诉 Google ，这个站点适配了哪些设备 */}
+        <meta name="applicable-device" content="pc, mobile" />
+        {/* Format-detection: 在默认状态下，网页的数字会被认为是电话号码，一般需要禁用 */}
+        <meta name="format-detection" content="telephone=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* 全局页面注入主题 context */}

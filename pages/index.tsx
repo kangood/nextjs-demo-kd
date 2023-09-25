@@ -49,6 +49,7 @@ const Home: NextPage<IProps & IComponentProps> = ({ title, description, articles
             [styles.headerWebp]: isSupportWebp,
           })}
         />
+        {/* SEO优化之「H标签」（H1 ~ H3效果最好，依次递减） */}
         <h1 className={styles.title}>{title}</h1>
 
         <p className={styles.description}>{description}</p>
