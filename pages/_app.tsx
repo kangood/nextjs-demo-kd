@@ -3,7 +3,7 @@ import { Layout, ILayoutProps } from "@/components/layout";
 import App from 'next/app';
 import Head from 'next/head';
 import axios from 'axios';
-import { LOCALDOMAIN, getIsMobile } from '@/utils';
+import { LOCALDOMAIN, getIsMobile, getIsSupportWebp } from '@/utils';
 import { ThemeContextProvider } from "@/stores/theme";
 import { UserAgentProvider } from '@/stores/userAgent';
 
@@ -14,9 +14,9 @@ export interface IComponentProps {
   isSupportWebp?: boolean;
 }
 
-function MyApp(data: AppProps & ILayoutProps & { isMobile: boolean }) {
+function MyApp(data: AppProps & ILayoutProps & { isMobile: boolean; isSupportWebp: boolean }) {
 
-  const { Component, pageProps, navbarData, footerData, isMobile } = data;
+  const { Component, pageProps, navbarData, footerData, isMobile, isSupportWebp } = data;
 
   return (
     <div>
@@ -35,7 +35,8 @@ function MyApp(data: AppProps & ILayoutProps & { isMobile: boolean }) {
       <ThemeContextProvider>
         <UserAgentProvider>
           <Layout navbarData={navbarData} footerData={footerData}>
-            <Component {...pageProps} />
+            {/* 为所有页面注入isMobile、isSupportWebp */}
+            <Component {...pageProps} isMobile={isMobile} isSupportWebp={isSupportWebp} />
           </Layout>
         </UserAgentProvider>
       </ThemeContextProvider>
@@ -54,6 +55,7 @@ MyApp.getInitialProps = async (context: AppContext) => {
     ...pageProps,
     ...data,
     isMobile: getIsMobile(context),
+    isSupportWebp: getIsSupportWebp(context),
   };
 };
 

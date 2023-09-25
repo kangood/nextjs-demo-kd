@@ -1,16 +1,5 @@
 @import "./media.scss";
 
-@mixin initStatus {
-  transform: translate3d(0, 2.5rem, 0);
-  opacity: 0;
-}
-
-@mixin finalStatus {
-  -webkit-transform: none;
-  transform: none;
-  opacity: 1;
-}
-
 .container {
   padding: 0 2rem;
   color: var(--primary-color);
@@ -23,6 +12,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    .header {
+      background-image: var(--home-background-icon);
+      background-size: 18.75rem 18.75rem;
+      background-repeat: no-repeat;
+      width: 18.75rem;
+      height: 18.75rem;
+    }
+
+    .headerWebp {
+      background-image: var(--home-background-icon-webp);
+    }
     .title a {
       color: var(--link-color);
       text-decoration: none;
@@ -158,6 +159,16 @@
     }
   }
 
+@mixin initStatus {
+  transform: translate3d(0, 2.5rem, 0);
+  opacity: 0;
+}
+
+@mixin finalStatus {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+}
 // @keyframes 指向动画的逐帧状态
   @keyframes fadeInDown1 {
   // 0% 和 11 % 都是一样的内容，这时区域处于 y 轴 2.5rem 位置
