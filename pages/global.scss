@@ -36,6 +36,8 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    // 将 body 进行隐藏，然后对根节点设置 100 页宽的高度，将外部 body 的滚动移动到页面内，这样外界的滚动相关的问题都会解决 
+    overflow: hidden;
 }
 
 a {
@@ -47,15 +49,21 @@ a {
     box-sizing: border-box;
 }
 
-// 移动端遮罩层
-.forbidScroll {
-    height: 100vh;
-    overflow: hidden;
-}
+// 移动端遮罩层（解决「滚动穿透」的问题）
+// .forbidScroll {
+//     height: 100vh;
+//     overflow: hidden;
+// }
 
-// pc端遮罩层
-.pcForbidScroll {
-    width: calc(100% - 1rem); // 滚动栏假区域
+// pc端遮罩层（解决「解决滚动穿透后」的屏幕闪烁问题）
+// .pcForbidScroll {
+//     width: calc(100% - 1rem); // 滚动栏假区域
+//     height: 100vh;
+//     overflow: hidden;
+// }
+
+// 配合 body 的隐藏，解决「滚动穿透」后的「屏幕闪烁」后的遗留「橡皮筋」问题（顶部和底部还是能滑动，顶部下滑刷新倒是没了）
+#__next {
     height: 100vh;
-    overflow: hidden;
-  }
+    overflow: auto;
+}
